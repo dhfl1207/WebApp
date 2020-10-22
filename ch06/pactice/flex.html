@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch06/pactice/flex.html</title>
+    <style>
+        header {
+            position: static;
+            width: 100%;
+            height: 50px;
+            background-color: tomato;
+        }
+
+        nav {
+            position: sticky;
+            top: 70px;
+            width: 90px;
+            height: 2000px;
+            background-color: rgb(253, 132, 110);
+        }
+        section {
+            position: absolute;
+            left: 100px;
+            top: 70px;
+            width: 85%;
+            height: 2000px;  
+        }
+
+        iframe{
+            width: 90%;
+            height: 2000px;
+            background-color: rgb(255, 168, 152);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <header>
+
+            <ul>
+                <span><a href="introduce_myself.html" target="f_a">1.INTRODUCE MYSELF</a></span>
+                <span><a href="hey_click_here.html" target="f_a">2. Hey click here</a></span>
+                <span><a href="Hellow.html" target="f_a">3. 안뇽하세효</a></span>
+            </ul>
+
+
+        </header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Intro</li>
+                <li>News</li>
+                <li>Article</li>
+                <li>Aside</li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        <iframe width="100%" height="150px" name="f_a" src="first_page.html"></iframe>
+
+    </section>
+    <footer>
+       Let's go together!!!
+    </footer>
+</body>
+
+</html>

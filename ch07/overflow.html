@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch07/overflow.html</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: beige;
+            border: red dashed 1px;
+            /* border-color: red;
+            border-style: dashed;
+            border-width: 1px; */
+            border-radius: 30px;
+            overflow: auto;
+        }
+        img {
+            float:right;
+        }
+        img.nofloat{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div><img style="width:50; height: 50px;" src="../welcome.jpg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam inventore commodi ratione debitis provident quaerat voluptatem cum eos tenetur eius veniam maiores fugit harum aliquam quae, consequuntur nisi repudiandae?
+    </div>
+    <img class="nofloat" src="../welcome.jpg">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, assumenda repellendus? Repellat alias ratione modi rerum repudiandae recusandae corporis laudantium! Ea, laborum assumenda. Molestias consectetur voluptatum impedit pariatur commodi vero.
+    
+</body>
+</html>

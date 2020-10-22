@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position.html</title>
+    <style>
+        * {
+            border: 1px dotted red;
+        }
+        header {
+            position: static;
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+        }
+
+        nav {
+            position: static;
+            width: 90px;
+            height: 150px;
+        }
+
+        section {
+            position: absolute;
+            left: 100px;
+            top: 62px;
+            width: 80%;
+            height: 150px;
+        }
+        footer {
+            position: static;
+            height: 50px;
+        }
+
+        li {
+            display: inline;
+        }
+        nav >li {
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <header>
+            <ul>
+                <li><a href="">1.menu</a></li>
+                <li><a href="">2.menu</a></li>
+                <li><a href="">3.menu</a></li>
+            </ul>
+        </header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Intro</li>
+                <li>News</li>
+                <li>Article</li>
+                <li>Aside</li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, pariatur quam? Ab eaque modi nesciunt repellat eius vitae tempora eligendi deserunt rem perferendis, laudantium quaerat voluptatum odio magnam deleniti nostrum!
+    </section>
+    <footer>
+        Since 1970.
+    </footer>
+</body>
+
+</html>

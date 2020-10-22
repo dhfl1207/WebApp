@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>webapp/usertag.html </title>
+      <meta charset='utf-8' />
+      <style>
+         company {
+            color: black;            
+         }
+         company>department {
+         background: green;
+         }
+         company[term] {
+         font-size:25px;}
+      </style>
+   </head>
+
+   <body>
+   <company term="10">한빛아카데미
+   <department>영업부</department>
+   <department>편집부
+      <team>그래픽팀</team>
+   </department>
+   </company>
+   <img src="">
+   <br>
+   <br>
+   <br>
+   <company>내머리속
+   <department>아침밥</department>
+   <department>점심밥
+      <team>오후간식</team>
+   </department>
+   </company>
+   <!--<img src="daum.png"> 이미지 가지고 오는 법-->
+   
+   <script>
+      1et dept = document.getElementsByTagName('department');
+      dept[0].childNodes[0].nodeValue = "Sales";
+   </script>
+   </body>
+
+</html>

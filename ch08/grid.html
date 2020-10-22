@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch08/grid.html</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: 19.5% 60% 19.5%;
+            grid-template-rows: auto auto;
+            background-color: white;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color:rgb(218, 215, 215);
+            /* border: 1px solid darkslategrey; */
+            /* padding: 20px; */
+            font-size: 20px;
+            text-align: center;
+        }
+        .grid-item1 {
+            grid-column-start:1;
+            grid-column-end: 4;
+            height: 50px;
+        }
+        .grid-item2 {
+            grid-column-start:1;
+            grid-column-end: 4;
+            height: 30px;
+        }
+        .grid-item4 {
+            height: 400px;
+        }
+        .grid-item6 {
+            grid-column-start:1;
+            grid-column-end: 4;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item1">Header</div>
+        <div class="grid-item2">Navigation Menu</div>
+        <div class="grid-item3">Content</div>  
+        <div class="grid-item4">Main Content</div>
+        <div class="grid-item5">Content</div>
+        <div class="grid-item6">Footer</div>  
+      </div>
+      
+</body>
+</html>

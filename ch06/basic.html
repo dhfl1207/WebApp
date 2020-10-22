@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background: yellow;
+            border: 3px solid rgb(0, 73, 0);
+            color:azure;
+        }
+
+        div#div1 {
+            background-color: rgb(46, 143, 143) ;
+            border-color: rgb(36, 92, 73);
+            border-style: solid;
+            border-width: 2px;
+        }
+        div.div1 {
+            background-color:chocolate ;
+            border-color: brown;
+            border-style: dotted;
+            border-width: 2px;
+        }
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background-color: rgb(174, 92, 228);
+            border: rgb(78, 0, 109) 2px solid;
+            padding-left: 20px;
+            padding-top: 10px;
+
+        }
+        li {
+            color: blue;
+        }
+        ul>li {
+            background-color: darkcyan;
+        }
+        ol>li {
+            background-color: cornflowerblue;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+
+    <div style="background: rgb(155, 177, 15); width: 100px; height: 100px">div1</div>
+    <div id ="div1">div2</div>
+    <div class="div1">div3</div>
+
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span>
+    <span>span5</span>
+    <span>span6</span>
+</body>
+</html>

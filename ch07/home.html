@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch07/home.html</title>
+    <style>
+        div {
+            border-radius: 5px;
+            background-color: #9ca788;
+            padding: 20px;
+        }
+        input[type=submit] {
+            background-color:#c1650d;
+            color:#f7d233;
+            padding: 14px 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 40%;
+            margin-right: 40%;
+            border-radius: 5px;
+            width: 20%;
+        }
+        input[type=submit]:hover {
+            background-color: indianred;
+    
+        }
+
+        input[type=text], select {
+            width: 80%;
+            display: inline;
+            padding: 14px 20px;
+            margin: 10px 0;
+            border: 1px solid white;
+            border-radius: 3px;
+        }
+
+        #fname {
+            position: relative;
+            left: 6%;
+        }
+        #lname {
+            position: relative;
+            left: 6%
+        }
+        #country{
+            position: relative;
+            left: 8%;
+            
+        }
+    </style>
+</head>
+<body>
+    <h3>Form Tag</h3>
+    <div>
+        <form action="">
+            <label for="fname">FirstName</label>
+            <input type="text" id="fname" name="firstName" placeholder="Your name...">
+            <p/>
+            <label for="lname">LastName</label>
+            <input type="text" id="lname" name="lastName" placeholder="Your LastName...">
+            <p/>
+            <label for="Country">Country</label>
+            <select name="country" id="country">
+                <option value="">Korea</option>
+                <option value="">China</option>
+                <option value="">Japan</option>
+            </select>
+            <input type="submit" value="OK">
+        </form>
+    </div>
+</body>
+</html>

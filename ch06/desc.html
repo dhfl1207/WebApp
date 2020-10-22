@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2~ul {
+            color: red;
+        }
+
+        div>ul>li#first {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Descdent Selector</h2>
+        <ul>
+            후손 선택자
+            <li>1</li>
+            <li>2</li>
+
+            <head>
+                <li>
+                    <h2>후손...</h2>
+                    <ul>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </li>
+            </head>
+        </ul>
+    </div>
+    <h2>Decdent Selector</h2>
+</body>
+
+</html>
