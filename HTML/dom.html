@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+    <!-- <table border='1'>
+      <tr>
+        <td>이름</td>
+        <td>나이</td>
+        <td>직업</td>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>15</td>
+        <td>학생</td>
+      </tr>
+    </table> -->
+
+
+
+    <script>
+
+
+      console.log(document.body.childNodes[1].childNodes[0].nodeValue = 'Dom Lesson Two');
+      console.log(document.body.childNodes[3].childNodes[0].nodeValue = 'Good Morning World');//p
+
+      let div = document.createElement('div');
+      div.className = 'row'; //
+      div.setAttribute('id', 'row'); //
+
+      let text = document.createTextNode('안녕하세요');
+      div.append(text);
+      console.log(div); 
+
+      let $body = document.getElementsByTagName('p');
+      // 태그네임을 가지고 실행하겠다
+      $body[0].before(div); //화면에 띄우기.. []을 사용한다.
+
+      //
+      let person1 = {
+        이름 :'hong',
+        나이 : 15,
+        직업 : '학생'
+      }
+      let table = document.createElement('table'); 
+      table.setAttribute('border', '1');
+      let tr = document.createElement('tr');
+      for (field in person1) {
+        let td = document.createElement('td');
+        let text = document.createTextNode(field);
+        td.append(text);
+        tr.append(td);
+      }
+      table.append(tr);
+      
+      
+      tr = document.createElement('tr');
+      for (field in person1) {
+        let td = document.createElement('td');
+        let text = document.createTextNode(person1[field]);
+        td.append(text);
+        tr.append(td);
+      }
+      table.append(tr);
+      $body[0].after(table);
+
+      
+      
+    </script>
+  </body>
+
+</html>

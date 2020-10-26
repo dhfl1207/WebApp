@@ -17,7 +17,7 @@ showBtn.onclick = function () { //클릭하면 function이 작동하게
     // 달력만들기
     // 해당월의 전체일수: totalDay
     // 해당월의 1일의 요일정보: firstDay
-    let totalDay = ; //전체 날 수 구하기
+    let totalDay = 30; //전체 날 수 구하기
     let firstDay = new Date(year, month, 1); //첫 째날 구하기 
     let calTag = '<table border="1">';
     calTag += '<tr><td/><td/><td/>';

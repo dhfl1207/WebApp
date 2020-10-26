@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlhttp.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        //AJAX : 비동기 처리 방식 . 
+        //클라이언트 쪽에서 서버쪽으로 원하는 페이지 요청하고 받아오는 방식을 비동기방식으로 처리
+        //바로 실행 
+        // console.log('first');
+        let xhtp = new XMLHttpRequest(); //웹브라우저에 XMLHttpRequest 기능들이 내장되어 있음
+        // console.log(xhtp);
+        xhtp.onreadystatechange = function () {
+            // console.log(xhtp.readyState, xhtp.status, xhtp.responseText);
+            if (xhtp.readyState == 4 && xhtp.status == 200) { //이게 무슨 의미?
+                // console.log(xhtp.readyState == 4 && xhtp.status == 200);
+                let data = JSON.parse(xhtp.responseText);
+                // for(let i=0; i<data.length; i++) {
+                //     // console.log(data[i].id, data[i].first_name, data[i].last_name);
+                //     console.log(data);
+                // }    
+                let table = document.createElement('table');
+                table.setAttribute('border', '1');
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i]);
+                    let tr = document.createElement('tr');
+                    for (field in data[i]) {
+                        if (field == 'id')
+                            tr.setAttribute('id', data[i][field])
+                        // console.log(data[i][field]);
+                        if (field != 'ip_address') {
+                            let td = document.createElement('td');
+                            let text = document.createTextNode(data[i][field]);
+                            td.append(text);
+                            tr.append(td);
+                        }
+                    }
+                    table.append(tr);
+                }
+                // console.log(table);
+                show.append(table);
+            }
+        }
+        xhtp.open('get', 'MOCK_DATA.json');
+
+        xhtp.send();
+
+        // // console.log('last')
+        // let table, tr, td;
+        // table = document.createElement('table');
+        // table.border = '1';
+
+        // let myfunc = function() {
+        //     for(let i=0; i<data.length; i++) {                     
+        //     }
+        // //     tr = document.createElement('tr');
+
+        // }
+    </script>
+</body>
+
+</html>

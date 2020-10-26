@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name<input type="text" name="name" value="홍길동"><br>
+    Age<input type="text" name="age" value="15"><br>
+    Job<input type="text" name="job" value="학생"><br>
+    <button id = 'btn'>입력</button><br>
+    <div style="height: 10px;"></div>
+
+    <table id="tbl" border="1">
+    <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>직업</th>
+        <th>기능</th>
+    </tr>  
+    <!-- <tr>
+        <td>Hong</td>
+        <td>15</td>
+        <td>학생</td>
+    </tr>      이 작업을 하려함  -->
+    </table>
+    <script>
+        let btn = document.getElementById('btn'); //btn에 작업 할 수 있다
+        // btn.onclick = function (){
+
+        // }
+        btn.addEventListener('click', myCallbackFunc);
+        btn.addEventListener('mouseover', myMouseOverFunc);
+        btn.addEventListener('mouseout', myMouseOutFunc);
+
+        function myMouseOverFunc() {}
+        function myMouseOutFunc() {}
+
+
+        function myCallbackFunc() {
+            let inputs = document.getElementsByTagName('input');
+            let name = inputs[0].value;
+            let age = inputs[1].value;
+            let job = inputs[2].value;
+
+            if(name == null || name == '') {
+                window.arlert('이름을 입력하세요.');
+                return;
+            }
+            if(!age) {
+                window.alert('나이를 입력하세요.');
+                return;
+            }
+            if(!job) {
+                window.alert('직업을 입력하세요.');
+                return;
+            }
+
+            let tr = document.createElement('tr');
+            //name생성
+            let td = document.createElement('td');
+            let text = document.createTextNode(name);
+            td.append(text);
+            tr.append(td);
+            // age 생성
+            td = document.createElement('td');
+            text = document.createTextNode(age);
+            td.append(text);
+            tr.append(td);
+            // job 생성
+            td = document.createElement('td');
+            text = document.createTextNode(job);
+            td.append(text);
+            tr.append(td);
+            //버튼 생성
+            let btn = document.createElement('button');
+            text = document.createTextNode('Del');
+            btn.onclick = function(){
+                console.log(this.parentNode.previousSibling.previousSibling.childNodes[0].nodeValue);
+                this.parentNode.parentNode.remove();
+            } //this은 버튼을 이야기함. 버튼을 누르면 이 펑션을 실행해 달라는 내용
+            //왜 삭제 되면 나오는거지?
+            btn.append(text);
+            td = document.createElement('td');
+            td.append(btn);
+            tr.append(td);
+
+            let tbl = document.getElementById('tbl');
+            tbl.append(tr);
+            
+            inputs[0].value = '';
+            inputs[1].value = '';
+            inputs[2].value = '';
+            inputs[0].focus();
+        }; //위랑 같은 것을 실행하는 다른 코드
+
+    </script>
+</body>
+</html>
