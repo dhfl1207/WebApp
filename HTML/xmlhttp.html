@@ -13,52 +13,63 @@
         //AJAX : 비동기 처리 방식 . 
         //클라이언트 쪽에서 서버쪽으로 원하는 페이지 요청하고 받아오는 방식을 비동기방식으로 처리
         //바로 실행 
-        // console.log('first');
+        console.log('first');
         let xhtp = new XMLHttpRequest(); //웹브라우저에 XMLHttpRequest 기능들이 내장되어 있음
-        // console.log(xhtp);
         xhtp.onreadystatechange = function () {
             // console.log(xhtp.readyState, xhtp.status, xhtp.responseText);
-            if (xhtp.readyState == 4 && xhtp.status == 200) { //이게 무슨 의미?
-                // console.log(xhtp.readyState == 4 && xhtp.status == 200);
-                let data = JSON.parse(xhtp.responseText);
-                // for(let i=0; i<data.length; i++) {
-                //     // console.log(data[i].id, data[i].first_name, data[i].last_name);
-                //     console.log(data);
-                // }    
-                let table = document.createElement('table');
-                table.setAttribute('border', '1');
-                let arr = ['id', 'first_name', 'last_name', 'email', 'gender']
-                for(a of arr){ // for(let i = 0; i <arr.length; i++) 랑 같은 건가??????
-                let th = document.createElement('th');
-                text = document.createTextNode(a);
-                let td = document.createElement('td');
-                th.append(text);
-                table.append(th);
-                // console.log(table)
-                }// 테이블 헤드에 항목 만들기 
+            console.log('xhtp');
 
+            if (xhtp.readyState == 4 && xhtp.status == 200) { //이게 무슨 의미?
+                //// let data = JSON.parse(xhtp.responseText);
+                console.log('hello');
                 for (let i = 0; i < data.length; i++) {
-                    console.log(data[i]);//인덱스 하나에 있는 필드 한 덩어리를 가지고 온다. 
-                    let tr = document.createElement('tr'); // 가지고 온겅 tr에 싣기 위한 작업
-                    for (field in data[i]) {  //데이터 안에 있는 필드들을 자고 오는 
-                        if (field == 'id') //그 중에 id라는 필드 값을 가지고 있으면
-                            tr.setAttribute('id', data[i][field]) // id 라는 id(속성)을 추가한다.
-                        // console.log(data[i][field]);
-                        if (field != 'ip_address') { //ip주소라는 이름을 자고 있지 않은 필드만 받겠다
-                            let td = document.createElement('td'); //가지고 온 필드는 칸칸 마다 들어가니까 '열'인 td
-                            let text = document.createTextNode(data[i][field]); //배열의 필드들을 textNode로 text에 담는다. 
-                            td.append(text);    
-                            tr.append(td);    
-                        }
-                    } //출력하는 순서를 조정할 수 있을까????????
-                    table.append(tr);
+                    //     // console.log(data[i].id, data[i].first_name, data[i].last_name);
+                    //     console.log(data);
+                    // }    
+                    // loadJson(data);
+
+                    let data = (xhtp.responseXML);
+                    // console.log(data)
+                    // document.write(data)
+                    data = data.getElementsByTagName('record');
+                    for (let i = 0; i < data.length; i++)
+                        for (let j = 0; j < data[i].children.length; j++)
+                            console.log(data[i].children[j].innerHTML);
+                    // console.log('id:' + data[0].children[0].firstChild.nodeValue);
+                    // console.log('fn:' + data[0].children[1].firstChild.nodeValue);
+                    // console.log('ln:' + data[0].children[2].innerHTML);
+                    loadXml(data);
                 }
-                // console.log(table);
-                show.append(table);
             }
         }
-        xhtp.open('get', 'MOCK_DATA.json'); // data를 가지고 오는 get set같은 것들
+        // xhtp.open('get', 'MOCK_DATA.json');
+        xhtp.open('get', 'dataset.xml'); // data를 가지고 오는 get set같은 것들
         xhtp.send();
+
+        function loadXml(data) {
+            let table = document.createElement('table');
+            table.setAttribute('border', '1');
+            let arr = ['id', 'firtst_name', 'last_name', 'email', 'gender', 'ip_address']
+            for (a of arr) {
+                let th = document.createElement('th');
+                text = document.createTextNode(a);
+                th.append(text);
+                table.append(th);
+            }
+            let myTag = document.getElementsByTagName('record')
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 0; j < data[i].children.length; j++) {
+                    let td = document.createElement('td');
+                    let text = document.createTextNode(data[i].children[j].innerHTML);
+                    td.append(text);
+                    tr.append(td);
+                }
+            }
+            table.append(tr);
+        }
+        let show = document.getElementById('show');
+        show.append(table);
     </script>
 </body>
 
